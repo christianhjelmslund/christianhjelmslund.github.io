@@ -21,7 +21,7 @@ const PostPage = (props) => {
         }
     }, [onFetchPost, props.location.post, props.location.state, props.match.params])
 
-    const post = props.location.post ? props.location.post : props.post
+    let post = props.location.post ? props.location.post : props.post
 
     let postView
     if (post) {
@@ -34,6 +34,7 @@ const PostPage = (props) => {
             content={post.content}
             popularity={post.popularity}
             category={post.category}
+            image={post.image}
             initiatedFromPostPage />
     } else {
         postView = <Spinner/>
@@ -51,6 +52,7 @@ const PostPage = (props) => {
 }
 
 const mapDispatchToProps = dispatch => {
+
     return {
         onFetchPost: (id) => dispatch(actions.getSpecificPost(id))
     }

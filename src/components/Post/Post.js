@@ -1,10 +1,11 @@
 import React from "react";
 
-import Card from 'react-bootstrap/Card'
+import { Card, Image } from 'react-bootstrap'
 import StyledButton from "../UI/StyledComponents/StyledButton";
-import zlatan from "./zlatan.jpg"
+import test_aspect_ratio from "./test_aspect_ratio.jpeg"
 
 import { Route } from 'react-router-dom'
+import useDecodePost from "../../hooks/decodePost";
 
 const Post = (props) => {
     let pointer = "pointer"
@@ -20,17 +21,19 @@ const Post = (props) => {
                 date: props.date,
                 author: props.author,
                 popularity: props.popularity,
-                category: props.category
+                category: props.category,
+                image: props.image
             }
         })
     }
+
+    const content = useDecodePost(props)
 
     if (props.initiatedFromPostPage) {
         pointer = null
         buttonDisabled = true
         onClick = () => {}
     }
-
     return (<Route render={({ history }) => (
         <Card text={"white"}
               style={{marginBottom: "20px",
@@ -44,15 +47,10 @@ const Post = (props) => {
                     <br/>
                     <span style={{fontSize:"small", color:"gray"}}>20/02/2020</span>
                 </Card.Title>
-                <Card.Img variant="top" src={zlatan} />
+                <Card.Img variant="top" src={test_aspect_ratio} />
                 <br/>
                 <br/>
-                <Card.Text style={{
-                    whiteSpace: "pre-wrap",
-                    fontSize: "x-large"
-                }}>
-                    {props.content}
-                </Card.Text>
+                {content}
             </Card.Body>
             <Card.Footer>
                 <flex-gap style={{
