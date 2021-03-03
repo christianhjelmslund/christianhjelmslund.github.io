@@ -35,6 +35,8 @@ const PostPage = (props) => {
             popularity={post.popularity}
             category={post.category}
             image={post.image}
+            images={post.images}
+            codeblock={post.codeblocks}
             initiatedFromPostPage />
     } else {
         postView = <Spinner/>

@@ -22,13 +22,14 @@ const Post = (props) => {
                 author: props.author,
                 popularity: props.popularity,
                 category: props.category,
-                image: props.image
+                image: props.image,
+                images: props.images,
+                codeblock: props.codeblock
             }
         })
     }
 
     const content = useDecodePost(props)
-
     if (props.initiatedFromPostPage) {
         pointer = null
         buttonDisabled = true

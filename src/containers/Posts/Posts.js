@@ -71,6 +71,8 @@ export const Posts = props => {
                 popularity={post.popularity}
                 category={post.category}
                 image={post.image}
+                images={post.images}
+                codeblock={post.codeblocks}
                 filter={(category) => filterPostsByCategory(category, posts)}/>
         }).reverse()
     }
