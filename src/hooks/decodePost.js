@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Image} from "react-bootstrap";
+import {Image} from "react-bootstrap";
 
 export default post => {
     if (!post) { return post }
@@ -7,31 +7,19 @@ export default post => {
     const components = []
     let idx = 0
     if (post.images) {
-        console.log(post.images)
         for (let img in post.images) {
             img = post.images[img]
-            components.push(post.content.substring(idx,img.index))
+            components.push(<p style={{marginTop: "16px"}} key={idx}>{post.content.substring(idx,img.index)}</p>)
             idx = img.index
-            components.push(<br key={idx}/>)
-            components.push(<br key={idx+1}/>)
-            components.push(<Image key={idx+2} className={"img-fluid"} src={img.url}/>)
-            components.push(<br key={idx+3}/>)
-            components.push(<br key={idx+4}/>)
+            components.push(<Image key={idx+1} className={"img-fluid"} src={img.url}/>)
         }
-        // to also include the last content
         if (idx < post.content.length) {
-            components.push(post.content.substring(idx,post.content.length))
+            components.push(<p key={idx+2} style={{marginTop: "16px"}}>{post.content.substring(idx,post.content.length)}</p>)
         }
     }
     else {
         components.push(post.content)
     }
 
-    return <Card.Text style={{
-        whiteSpace: "pre-wrap",
-        fontSize: "large"
-    }}>
-        {components}
-    </Card.Text>
-
+    return components
 }

@@ -1,18 +1,18 @@
 import React, {useEffect} from "react";
 
-import Post from "../../../components/Post/Post";
-import {Col, Row} from "react-bootstrap";
-
 import * as actions from "../../../redux/actions/actions";
 import {connect} from "react-redux";
 
 import withErrorHandler from "../../../hoc/withErrorHandler";
 import useHttpErrorHandler from "../../../hooks/httpErrorHandling";
+import styles from "./PostPage.module.css"
 import Spinner from "../../../components/UI/Spinner/Spinner";
+import StyledButton from "../../../components/UI/StyledComponents/StyledButton";
+import useDecodePost from "../../../hooks/decodePost";
+import test_aspect_ratio from "./test_aspect_ratio.jpeg"
 
 const PostPage = (props) => {
     const {onFetchPost} = props
-
     useEffect(() => {
         if (!props.location.post) {
             let potentialPostId;
@@ -20,37 +20,29 @@ const PostPage = (props) => {
             onFetchPost(potentialPostId)
         }
     }, [onFetchPost, props.location.post, props.location.state, props.match.params])
-
     let post = props.location.post ? props.location.post : props.post
 
-    let postView
-    if (post) {
-        postView = <Post
-            id={post.id}
-            key={post.id}
-            date={post.date}
-            title={post.title}
-            author={post.author}
-            content={post.content}
-            popularity={post.popularity}
-            category={post.category}
-            image={post.image}
-            images={post.images}
-            codeblock={post.codeblocks}
-            initiatedFromPostPage />
-    } else {
-        postView = <Spinner/>
-    }
+    const content = useDecodePost(post)
 
-    return (
-        <Row style={{marginTop: "25px"}}>
-            <Col/>
-            <Col xs={8}>
-                {postView}
-            </Col>
-            <Col/>
-        </Row>
-    )
+    if (!post.author) return <Spinner/>
+
+    const categories = post.category.map((category) => {
+        return (<StyledButton key={category}
+                              variant="custom_dark_blue"
+                              pointerEvents={"none"}
+                              buttonTitle={category}/>)
+    });
+
+    return  <article className={styles.article}>
+        <span>{post.date}</span>
+        <h1 className={styles.title}>{post.title}</h1>
+        <div className={styles.divImg}>
+            <img className={styles.img} src={test_aspect_ratio} alt={test_aspect_ratio}/>
+        </div>
+        <div className={styles.categories}>{categories}</div>
+        <p className={styles.author}>{post.author}</p>
+        <div className={styles.content}>{content}</div>
+    </article>
 }
 
 const mapDispatchToProps = dispatch => {

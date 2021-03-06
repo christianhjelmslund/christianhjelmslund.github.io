@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Card, Image } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import StyledButton from "../UI/StyledComponents/StyledButton";
-import test_aspect_ratio from "./test_aspect_ratio.jpeg"
+import test_aspect_ratio from "../../containers/Posts/Post/test_aspect_ratio.jpeg"
 
 import { Route } from 'react-router-dom'
 import useDecodePost from "../../hooks/decodePost";
@@ -24,17 +24,12 @@ const Post = (props) => {
                 category: props.category,
                 image: props.image,
                 images: props.images,
-                codeblock: props.codeblock
             }
         })
     }
 
     const content = useDecodePost(props)
-    if (props.initiatedFromPostPage) {
-        pointer = null
-        buttonDisabled = true
-        onClick = () => {}
-    }
+
     return (<Route render={({ history }) => (
         <Card text={"white"}
               style={{marginBottom: "20px",
