@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
+import { Route, Switch, Redirect, HashRouter} from "react-router-dom";
 
 import './custom.scss'
 import Layout from "./components/Layout/Layout";
@@ -12,20 +12,20 @@ const App = () => {
 
     let routes = (
         <Switch>
-            <Route path={"/posts"} exact component={Posts}/>
+            <Route path={"/"} exact component={Posts}/>
             <Route path={"/about"} component={About}/>
             <Route path={"/investing"} component={() => <p className={"under-construction"}>Under Construction... <Emoji symbol={"🏗"}/>️</p>}/>
-            <Route path={"/posts/:postId"} component={PostPage}/>
-            <Redirect to={"/posts"}/>
+            <Route path={"/:postId"} component={PostPage}/>
+            <Redirect to={"/"}/>
         </Switch>
     )
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Layout >
                 {routes}
             </Layout>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 

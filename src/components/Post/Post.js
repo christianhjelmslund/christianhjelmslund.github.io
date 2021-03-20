@@ -10,7 +10,7 @@ const Post = (props) => {
     let buttonDisabled = false
     let onClick = (history) => {
         history.push({
-            pathname: "/posts/"+props.id,
+            pathname: "/"+props.id,
             post: {
                 id: props.id,
                 title: props.title,
