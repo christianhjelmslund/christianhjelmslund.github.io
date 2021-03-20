@@ -94,7 +94,7 @@ export const Posts = props => {
                 </StyledInput>
             </Row>
             <Row style={{paddingTop: "10px"}}>
-                <p> At the moment you can filter the posts based on the title or category</p>
+                <p> At the moment you can filter the posts by searching for the title or choosing a category below </p>
             </Row>
             <Row style={{paddingTop: "10px"}}>
                 {  categories.size === 0 ? null :

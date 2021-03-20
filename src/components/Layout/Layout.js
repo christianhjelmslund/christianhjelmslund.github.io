@@ -1,6 +1,6 @@
 import React from "react";
 import NavigationBar from "../UI/NavigationBar/NavigationBar";
-import BackgroundImage from "../../assets/images/background.svg";
+import BackgroundImage from "../../assets/images/animated_background.svg";
 
 const Layout = props => {
     return (
