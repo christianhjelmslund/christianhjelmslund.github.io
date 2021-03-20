@@ -32,7 +32,7 @@ export const Posts = props => {
     const {onFetchPosts} = props
     const [filteredPosts, setFilteredPosts] = useState('')
     const resize = windowResize();
-
+ 
     const filterPostByTitle = (title, posts) => {
         if (title === "") {
             setFilteredPosts(null)
