@@ -5,7 +5,7 @@ import './custom.scss'
 import Layout from "./components/Layout/Layout";
 import Posts from "./containers/Posts/Posts"
 import PostPage from "./containers/Posts/Post/PostPage"
-import About from "./components/AboutMe/About"
+import About from "./components/About/About"
 import Emoji from "./components/Emoji/Emoji";
 
 const App = () => {

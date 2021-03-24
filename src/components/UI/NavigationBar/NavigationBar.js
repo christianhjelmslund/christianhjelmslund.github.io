@@ -4,10 +4,11 @@ import GithubIcon from "../../../assets/images/github.svg"
 import LinkedInIcon from "../../../assets/images/linkedin.svg"
 import InstagramIcon from "../../../assets/images/instagram.svg"
 
-import ExternalNavigation from "../StyledComponents/ExternalNavigation";
+import ExternalNavigation from "../StyledComponents/ExternalNavigation/ExternalNavigation";
 
 import {Navbar, Nav, Row } from "react-bootstrap"
 import NavigationItem from "./NavigationItem/NavigationItem";
+import styles from "../StyledComponents/ExternalNavigation/ExternalNavigation.module.css";
 
 
 const NavigationBar = () => {
@@ -27,7 +28,7 @@ const NavigationBar = () => {
                     <NavigationItem clicked={() => handleNavCollapse(true)} link="/investing">Investing</NavigationItem>
                     <NavigationItem clicked={() => handleNavCollapse(true)} link="/about">About</NavigationItem>
                     <Row>
-                        <ExternalNavigation src={GithubIcon} alt={"Github"}
+                        <ExternalNavigation className={styles.ExternalNavigation} src={GithubIcon} alt={"Github"}
                                             link={"https://github.com/christianhjelmslund"}/>
                         <ExternalNavigation src={LinkedInIcon} alt={"LinkedIn"}
                                             link={"https://www.linkedin.com/in/christian-hjelmslund/"}/>
