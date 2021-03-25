@@ -74,6 +74,7 @@ export const Posts = props => {
                 images={post.images}
                 teaser={post.teaser}
                 thumbnail={post.thumbnail}
+                buttons={post.buttons}
                 filter={(category) => filterPostsByCategory(category, posts)}/>
         }).reverse()
     }

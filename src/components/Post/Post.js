@@ -22,7 +22,8 @@ const Post = (props) => {
                 category: props.category,
                 images: props.images,
                 thumbnail: props.thumbnail,
-                teaser: props.teaser
+                teaser: props.teaser,
+                buttons: props.buttons
             }
         })
     }

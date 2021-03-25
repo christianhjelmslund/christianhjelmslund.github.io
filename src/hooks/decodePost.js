@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import {Image} from "react-bootstrap";
 import styles from "../containers/Posts/Post/PostPage.module.css";
+import StyledButton from "../components/UI/StyledComponents/StyledButton";
+import { useCookies } from "react-cookie"
 
 export default post => {
     if (!post) { return post }
-
+    const [, setCookie, deleteCookie] = useCookies();
     const components = []
     if (post.content) {
         for (let paragraph in post.content) {
@@ -21,6 +23,34 @@ export default post => {
             img = post.images[img]
             components[img.idx] = <div key={img.idx} className={styles.divImg}>
                 <Image className={"img-fluid"} src={img.url}/>
+            </div>
+        }
+    }
+    if (post.buttons) {
+        for (let btn in post.buttons) {
+            btn = post.buttons[btn]
+            let btnFunction
+            if (btn.function) {
+                if (btn.function.cookie) {
+                    const mode = Object.keys(btn.function.cookie)[0]
+                    const key = Object.keys(btn.function.cookie[mode])[0]
+                    const val = btn.function.cookie[mode][key]
+                    if (mode === "set") {
+                        btnFunction = () => {
+                            setCookie(key,val)
+                        }
+                    } else {
+                        btnFunction = () => {
+                            deleteCookie(key,val)
+                        }
+                    }
+                }
+            }
+            components[btn.idx] = <div key={btn.idx} className={styles.divImg}>
+                <StyledButton buttonTitle={btn.title}
+                              variant={btn.variant}
+                              clicked={btnFunction}>
+                </StyledButton>
             </div>
         }
     }

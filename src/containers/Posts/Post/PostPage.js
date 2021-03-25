@@ -22,7 +22,6 @@ const PostPage = (props) => {
     let post = props.location.post ? props.location.post : props.post
 
     const content = useDecodePost(post)
-
     if (!post.author) return <Spinner/>
 
     const categories = post.category.map((category) => {
@@ -44,7 +43,6 @@ const PostPage = (props) => {
             <div className={styles.teaser}>{post.teaser}</div>
         </div>
         <div className={styles.content}>{content}</div>
-        <div className={styles.categories}>{categories}</div>
     </article>
 }
 
