@@ -2,7 +2,7 @@ import React from "react";
 
 import { Card } from 'react-bootstrap'
 import StyledButton from "../UI/StyledComponents/StyledButton";
-
+import styles from "./Post.module.css"
 import { Route } from 'react-router-dom'
 
 const Post = (props) => {
@@ -28,11 +28,7 @@ const Post = (props) => {
     }
 
     return (<Route render={({ history }) => (
-        <Card text={"white"}
-              style={{marginBottom: "20px",
-                  backgroundColor: 'var(--custom_black)',
-                  borderRadius: "2%"
-              }}>
+        <Card text={"white"} className={styles.myCard}>
             <Card.Body style={{cursor: pointer}} onClick={() => onClick(history)}>
                 <Card.Title style={{fontSize: "x-large"}}>{props.title}
                     <br/>
