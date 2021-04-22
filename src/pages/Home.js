@@ -1,19 +1,19 @@
 import React, {Fragment, useEffect, useState} from "react";
 
-import * as actions from "../../redux/actions/actions"
+import * as actions from "../redux/actions/actions"
 import {connect} from "react-redux";
 
-import withErrorHandler from "../../hoc/withErrorHandler"
-import useHttpErrorHandler from "../../hooks/httpErrorHandling"
-import windowResize from "../../hooks/windowResize"
+import withErrorHandler from "../components/hoc/withErrorHandler"
+import useHttpErrorHandler from "../hooks/httpErrorHandling"
+import windowResize from "../hooks/windowResize"
 
-import styles from '../../styles/pages/Posts.module.css'
-import Post from "../../components/Post"
-import Spinner from "../../components/UI/Spinner";
-import StyledButton from "../../components/UI/StyledButton";
+import styles from '../styles/pages/Posts.module.css'
+import Post from "../components/Post"
+import Spinner from "../components/UI/Spinner";
+import StyledButton from "../components/UI/StyledButton";
 import {Row, Col, Container, Card, Button} from "react-bootstrap"
 
-export const Posts = props => {
+export const Home = props => {
 
     const {onFetchPosts} = props
     const [filteredPosts, setFilteredPosts] = useState('')
@@ -134,8 +134,6 @@ export const Posts = props => {
             </Fragment>
         }
     }
-
-
     return (
         <React.Fragment>
             <Container className={styles.container} fluid={true}>
@@ -146,14 +144,11 @@ export const Posts = props => {
         </React.Fragment>
     )
 }
-
-
 const mapDispatchToProps = dispatch => {
     return {
         onFetchPosts: () => dispatch(actions.getAllPosts())
     }
 }
-
 const mapStateToProps = state => {
     return {
         posts: state.posts.posts,
@@ -161,4 +156,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Posts, useHttpErrorHandler))
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Home, useHttpErrorHandler))

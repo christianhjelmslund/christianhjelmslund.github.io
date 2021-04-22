@@ -3,17 +3,17 @@ import React from 'react'
 import {configure, shallow} from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
 
-import { Posts } from "../../containers/Posts/Posts";
-import Post from "../../containers/Posts/Post/Post";
+import { Home } from "../../pages/Home";
+import Post from "../../pages/Post";
 
 configure({adapter: new Adapter()})
 
-describe('<Posts/>', () => {
+describe('<Home/>', () => {
 
     let wrapper
 
     beforeEach(function () {
-        wrapper = shallow(<Posts/>)
+        wrapper = shallow(<Home/>)
     })
 
     it('it should not have any <Post/> children', function () {

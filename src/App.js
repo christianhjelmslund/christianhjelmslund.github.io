@@ -3,10 +3,10 @@ import { Route, Switch, Redirect, HashRouter} from "react-router-dom";
 
 import './styles.scss'
 import Layout from "./components/Layout";
-import Posts from "./containers/Posts/Posts"
-import PostPage from "./containers/Posts/Post/PostPage"
-import About from "./components/About/About"
-import Emoji from "./components/Emoji";
+import Posts from "./pages/Home"
+import PostPage from "./pages/Post"
+import About from "./pages/About"
+import Emoji from "./components/UI/Emoji";
 
 const App = () => {
 

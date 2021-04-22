@@ -1,16 +1,16 @@
 import React, {useEffect} from "react";
 
-import * as actions from "../../../redux/actions/actions";
+import * as actions from "../redux/actions/actions";
 import {connect} from "react-redux";
 
-import withErrorHandler from "../../../hoc/withErrorHandler";
-import useHttpErrorHandler from "../../../hooks/httpErrorHandling";
-import styles from "../../../styles/pages/PostPage.module.css"
-import Spinner from "../../../components/UI/Spinner";
-import StyledButton from "../../../components/UI/StyledButton";
-import useDecodePost from "../../../hooks/decodePost";
+import withErrorHandler from "../components/hoc/withErrorHandler";
+import useHttpErrorHandler from "../hooks/httpErrorHandling";
+import styles from "../styles/pages/PostPage.module.css"
+import Spinner from "../components/UI/Spinner";
+import StyledButton from "../components/UI/StyledButton";
+import useDecodePost from "../hooks/decodePost";
 
-const PostPage = (props) => {
+const Post = (props) => {
     const {onFetchPost} = props
     useEffect(() => {
         if (!props.location.post) {
@@ -30,7 +30,6 @@ const PostPage = (props) => {
                               noPointerEvents={true}
                               buttonTitle={category}/>)
     });
-
     return  <article className={styles.article}>
         <p className={styles.date}>{post.date}</p>
         <h1 className={styles.title}>{post.title}</h1>
@@ -47,7 +46,6 @@ const PostPage = (props) => {
 }
 
 const mapDispatchToProps = dispatch => {
-
     return {
         onFetchPost: (id) => dispatch(actions.getSpecificPost(id))
     }
@@ -59,4 +57,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(PostPage, useHttpErrorHandler))
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Post, useHttpErrorHandler))
