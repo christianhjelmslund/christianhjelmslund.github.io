@@ -7,10 +7,10 @@ import withErrorHandler from "../../hoc/withErrorHandler"
 import useHttpErrorHandler from "../../hooks/httpErrorHandling"
 import windowResize from "../../hooks/windowResize"
 
-import styles from './Posts.module.css'
-import Post from "../../components/Post/Post"
-import Spinner from "../../components/UI/Spinner/Spinner";
-import StyledButton from "../../components/UI/StyledComponents/StyledButton";
+import styles from '../../styles/Posts.module.css'
+import Post from "../../components/Post"
+import Spinner from "../../components/UI/Spinner";
+import StyledButton from "../../components/UI/StyledButton";
 import {Row, Col, Container, Card, Button} from "react-bootstrap"
 
 export const Posts = props => {

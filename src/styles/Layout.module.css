@@ -7,10 +7,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
-    background-image: url("../../assets/images/animated_background.svg");
+    background-image: url("../assets/images/animated_background.svg");
 }
 
 .AlternativeBackground {
     composes: Background;
-    background-image: url("../../assets/images/background.svg");
-};
+    background-image: url("../assets/images/background.svg");
+}

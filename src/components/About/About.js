@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../../styles/Post.module.css";
-import Emoji from "../Emoji/Emoji";
+import styles from "../../styles/PostPage.module.css";
+import Emoji from "../Emoji";
 import { NavLink } from 'react-router-dom'
 
 const About = () => {

@@ -4,11 +4,11 @@ import GithubIcon from "../../../assets/images/github.svg"
 import LinkedInIcon from "../../../assets/images/linkedin.svg"
 import InstagramIcon from "../../../assets/images/instagram.svg"
 
-import ExternalNavigation from "../StyledComponents/ExternalNavigation/ExternalNavigation";
+import ExternalNavigation from "./ExternalNavigation";
 
 import {Navbar, Nav, Row } from "react-bootstrap"
-import NavigationItem from "./NavigationItem/NavigationItem";
-import styles from "../StyledComponents/ExternalNavigation/ExternalNavigation.module.css";
+import NavigationItem from "./NavigationItem";
+import styles from "../../../styles/ExternalNavigation.module.css";
 
 
 const NavigationBar = () => {

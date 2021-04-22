@@ -1,6 +1,6 @@
 import React from "react";
-import NavigationBar from "../UI/NavigationBar/NavigationBar";
-import styles from "./Layout.module.css"
+import NavigationBar from "./UI/NavigationBar/NavigationBar";
+import styles from "../styles/Layout.module.css"
 import { useCookies } from "react-cookie"
 
 const Layout = props => {
