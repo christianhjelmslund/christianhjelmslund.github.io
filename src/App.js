@@ -9,7 +9,6 @@ import About from "./pages/About"
 import Emoji from "./components/UI/Emoji";
 
 const App = () => {
-
     let routes = (
         <Switch>
             <Route path={"/"} exact component={Posts}/>

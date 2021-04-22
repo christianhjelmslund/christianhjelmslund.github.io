@@ -1,5 +1,6 @@
 import React from "react";
 import {Image} from "react-bootstrap";
+import ReactMarkdown from "react-markdown";
 import styles from "../styles/pages/PostPage.module.css";
 
 export default post => {
@@ -11,7 +12,7 @@ export default post => {
             components[paragraph.idx] =
                 <div key={paragraph.idx}>
                     <h3 className={styles.keyword}>{paragraph.keyword}</h3>
-                    <p >{paragraph.content}</p>
+                    <ReactMarkdown>{paragraph.content}</ReactMarkdown>
                 </div>
         }
     }
