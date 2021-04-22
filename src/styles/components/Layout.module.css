@@ -1,4 +1,4 @@
-.Background {
+.background {
     position: fixed;
     margin-top: 0%;
     width: 100vw;
@@ -10,7 +10,7 @@
     background-image: url("../../assets/images/animated_background.svg");
 }
 
-.AlternativeBackground {
-    composes: Background;
+.alternativeBackground {
+    composes: background;
     background-image: url("../../assets/images/background.svg");
-};
+}

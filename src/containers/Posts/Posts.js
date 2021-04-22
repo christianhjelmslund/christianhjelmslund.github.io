@@ -1,31 +1,17 @@
 import React, {Fragment, useEffect, useState} from "react";
-import {connect} from "react-redux";
-import {Row, Col, Container, Card, Button} from "react-bootstrap"
+
 import * as actions from "../../redux/actions/actions"
-import useHttpErrorHandler from "../../hooks/httpErrorHandling"
+import {connect} from "react-redux";
+
 import withErrorHandler from "../../hoc/withErrorHandler"
+import useHttpErrorHandler from "../../hooks/httpErrorHandling"
 import windowResize from "../../hooks/windowResize"
 
-import Post from "../../components/Post/Post"
-import Spinner from "../../components/UI/Spinner/Spinner";
-import styled from 'styled-components'
-import StyledButton from "../../components/UI/StyledComponents/StyledButton";
-
-const StyledInput = styled.input`
-      font: inherit;
-      margin: 10px auto;
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      background: var(--custom_black);
-      color: white;
-      text-align: left;
-      padding-left: 15px;
-      &:focus {
-        outline: none;
-        //border-bottom-color:var(--custom_black);
-      }
-`
+import styles from '../../styles/pages/Posts.module.css'
+import Post from "../../components/Post"
+import Spinner from "../../components/UI/Spinner";
+import StyledButton from "../../components/UI/StyledButton";
+import {Row, Col, Container, Card, Button} from "react-bootstrap"
 
 export const Posts = props => {
 
@@ -78,54 +64,48 @@ export const Posts = props => {
                 filter={(category) => filterPostsByCategory(category, posts)}/>
         }).reverse()
     }
-
-    // let postsLeft = []
-    // let postsRight = []
-    let postView
     const filterView =
-        <Card text={"white"} style={{backgroundColor: 'var(--custom_black)'}}>
-        <Container style={{width: "90%", padding: "20px"}} fluid={true}>
-            <Row>
-                <StyledInput
-                    id={"styledInput"}
-                    placeholder={"Search..."}
-                    onChange={event =>
-                        filterPostByTitle(event.target.value, posts)
-                    }>
-                </StyledInput>
-            </Row>
-            <Row style={{paddingTop: "10px"}}>
-                <p> At the moment you can filter the posts by searching for the title or choosing a category below </p>
-            </Row>
-            <Row style={{paddingTop: "10px"}}>
-                {  categories.size === 0 ? null :
-                [...categories].map(category => {
-                    return (<StyledButton id={category}
-                                          key={category}
-                                          variant="custom_dark"
-                                          buttonTitle={category}
-                                          clicked={() => filterPostsByCategory(category, posts)}/>)
-                })
-                }
-            </Row>
-            <Row style={{paddingTop: "10px"}}>
-                <Button id={"reset"} style={{
-                    width: "100%",
-                    cursor: 'pointer'
-                }} variant="danger" onClick={() => {
-                    setFilteredPosts(null)
-                }}>Reset
-                </Button>
-            </Row>
-        </Container>
-    </Card>
-    if (resize.width >= 1025) {
+        <Card className={styles.filterView}>
+            <Container className={styles.filterViewContainer}>
+                <Row>
+                    <input className='input'
+                        placeholder={"Search..."}
+                        onChange={event =>
+                            filterPostByTitle(event.target.value, posts)
+                        }>
+                    </input>
+                </Row>
+                <Row>
+                    <p> At the moment you can filter the posts by searching for the title or choosing a category below </p>
+                </Row>
+                <Row>
+                    {  categories.size === 0 ? null :
+                    [...categories].map(category => {
+                        return (<StyledButton id={category}
+                                              key={category}
+                                              variant="custom_dark"
+                                              buttonTitle={category}
+                                              clicked={() => filterPostsByCategory(category, posts)}/>)
+                    })
+                    }
+                </Row>
+                <Row className={"mt-3"}>
+                    <Button className={styles.filterViewResetButton}
+                            variant="danger"
+                            onClick={() => { setFilteredPosts(null)}}>
+                        Reset
+                    </Button>
+                </Row>
+            </Container>
+        </Card>
+    let postView
+    if (resize.width >= 1025) { // create a constants file
         if (props.loading) {
             postView =
                 <Fragment>
                     <Spinner/>
                 </Fragment>
-        } else if (posts.length === 1) {
+        } else if (posts.length === 1) { // delete this
             postView = <Fragment>
                 <Col/>
                 <Col xs={"2"}>{filterView} </Col>
@@ -135,19 +115,22 @@ export const Posts = props => {
         } else if (posts.length > 0) {
             postView = <Fragment>
                 <Col xs={"2"}>{filterView}</Col>
-                <Col>{filteredPosts ? filteredPosts.slice(filteredPosts.length / 2) : posts.slice(posts.length / 2)}</Col>
-                <Col>{filteredPosts ? filteredPosts.slice(0, filteredPosts.length / 2) : posts.slice(0, posts.length / 2)}</Col>
+                <Col>{filteredPosts ? filteredPosts.slice(filteredPosts.length / 2) : posts.slice(posts.length / 2)}
+                    {filteredPosts ? filteredPosts.slice(filteredPosts.length / 2) : posts.slice(posts.length / 2)}
+                    {filteredPosts ? filteredPosts.slice(filteredPosts.length / 2) : posts.slice(posts.length / 2)}</Col>
+                <Col>{filteredPosts ? filteredPosts.slice(0, filteredPosts.length / 2) : posts.slice(0, posts.length / 2)}
+                    {filteredPosts ? filteredPosts.slice(0, filteredPosts.length / 2) : posts.slice(0, posts.length / 2)}
+                    {filteredPosts ? filteredPosts.slice(0, filteredPosts.length / 2) : posts.slice(0, posts.length / 2)}</Col>
                 <Col xs={"2"}/>
             </Fragment>
         }
     }
-    // TODO: Fix this phone hack
     else {
-        if (posts.length === 0) {
+        if (posts.length === 0) { // props.isLoading instead
             postView = <Spinner/>
         } else {
             postView = <Fragment>
-               <Col style={{width: "90%"}}>{posts}</Col>
+               <Col className={styles.phoneView}>{posts}</Col>
             </Fragment>
         }
     }
@@ -155,7 +138,7 @@ export const Posts = props => {
 
     return (
         <React.Fragment>
-            <Container style={{width: "100%", marginTop: "25px"}} fluid={true}>
+            <Container className={styles.container} fluid={true}>
                 <Row>
                     {postView}
                 </Row>

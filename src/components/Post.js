@@ -1,14 +1,13 @@
 import React from "react";
 
 import { Card } from 'react-bootstrap'
-import StyledButton from "../UI/StyledComponents/StyledButton";
-import styles from "./Post.module.css"
+import StyledButton from "./UI/StyledButton";
+import styles from "../styles/components/Post.module.css"
 import { Route } from 'react-router-dom'
 
 const Post = (props) => {
-    let pointer = "pointer"
     let buttonDisabled = false
-    let onClick = (history) => {
+    let toPostPage = (history) => {
         history.push({
             pathname: "/"+props.id,
             post: {
@@ -28,26 +27,18 @@ const Post = (props) => {
         })
     }
 
-    return (<Route render={({ history }) => (
-        <Card text={"white"} className={styles.myCard}>
-            <Card.Body style={{cursor: pointer}} onClick={() => onClick(history)}>
-                <Card.Title style={{fontSize: "x-large"}}>{props.title}
-                    <br/>
-                    <span style={{fontSize:"small", color:"gray"}}>{props.date}</span>
-                </Card.Title>
-                <div style={{width: "100%", textAlign: "center"}}>
-                    <Card.Img variant="top" src={props.thumbnail} style={{maxWidth: "600px"}} />
-                </div>
-                <br/>
-                <br/>
-                {props.teaser}
-            </Card.Body>
-            <Card.Footer>
-                <flex-gap style={{
-                    display: "inline-flex",
-                    flexWrap: "wrap",
-                    gap: "12px"
-                }}>
+    return (
+        <Route render={({ history }) => (
+            <Card className={styles.post}>
+                <Card.Body className={'pointer'} onClick={() => toPostPage(history)}>
+                    <Card.Title className={styles.title}>{props.title}</Card.Title>
+                    <span className={styles.date}>{props.date}</span>
+                    <div className={styles.alignImg}>
+                        <Card.Img className={styles.img} variant="top" src={props.thumbnail} />
+                    </div>
+                    {props.teaser}
+                </Card.Body>
+                <Card.Footer className={styles.footer}>
                     {props.category ? props.category.map(category => {
                         return (<StyledButton disabled = {buttonDisabled}
                                               key={category}
@@ -55,9 +46,9 @@ const Post = (props) => {
                                               buttonTitle={category}
                                               clicked={() => props.filter(category)}/>)
                     }):null}
-                </flex-gap>
-            </Card.Footer>
-        </Card>)}/>
+                </Card.Footer>
+            </Card>)}
+        />
     )
 }
 

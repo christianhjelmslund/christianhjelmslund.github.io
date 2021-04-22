@@ -5,9 +5,9 @@ import {connect} from "react-redux";
 
 import withErrorHandler from "../../../hoc/withErrorHandler";
 import useHttpErrorHandler from "../../../hooks/httpErrorHandling";
-import styles from "./PostPage.module.css"
-import Spinner from "../../../components/UI/Spinner/Spinner";
-import StyledButton from "../../../components/UI/StyledComponents/StyledButton";
+import styles from "../../../styles/pages/PostPage.module.css"
+import Spinner from "../../../components/UI/Spinner";
+import StyledButton from "../../../components/UI/StyledButton";
 import useDecodePost from "../../../hooks/decodePost";
 
 const PostPage = (props) => {
@@ -27,7 +27,7 @@ const PostPage = (props) => {
     const categories = post.category.map((category) => {
         return (<StyledButton key={category}
                               variant={"custom_dark_blue"}
-                              pointerEvents={"none"}
+                              noPointerEvents={true}
                               buttonTitle={category}/>)
     });
 

@@ -4,8 +4,8 @@ import {configure, shallow} from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
 
 import NavigationBar from "../../components/UI/NavigationBar/NavigationBar";
-import ExternalNavigation from "../../components/UI/StyledComponents/ExternalNavigation/ExternalNavigation";
-import NavigationItem from "../../components/UI/NavigationBar/NavigationItem/NavigationItem";
+import ExternalNavigation from "../../components/UI/NavigationBar/ExternalNavigation";
+import NavigationItem from "../../components/UI/NavigationBar/NavigationItem";
 import GithubIcon from "../../assets/images/github.svg";
 import LinkedInIcon from "../../assets/images/linkedin.svg";
 import FacebookIcon from "../../assets/images/facebook.svg";

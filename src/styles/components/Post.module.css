@@ -1,7 +1,8 @@
-.myCard {
+.post {
   margin-bottom: 20px;
   background-color: var(--custom_black);
   border-radius: 2%;
+  color: white;
 
   vertical-align: middle;
   transform: translateZ(0);
@@ -12,6 +13,29 @@
   transition-property: transform;
 }
 
-.myCard:hover {
+.post:hover {
   transform: scale(1.01);
+}
+
+.title {
+  font-size: x-large;
+}
+
+.date {
+  font-size: small;
+  color: lightgray;
+}
+
+.alignImg {
+  width: 100%;
+  text-align: center;
+}
+
+.img {
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  margin-top: -20px;
 }

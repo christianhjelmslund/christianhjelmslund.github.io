@@ -1,0 +1,8 @@
+.styledButton {
+    border: 2px solid white;
+    margin: 5px;
+}
+
+.noPointerEvent{
+    pointer-events: none;
+}
