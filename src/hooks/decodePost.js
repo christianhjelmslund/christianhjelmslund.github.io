@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Image} from "react-bootstrap";
-import styles from "../containers/Posts/Post/PostPage.module.css";
+import styles from "../styles/Post.module.css";
 import StyledButton from "../components/UI/StyledComponents/StyledButton";
 import { useCookies } from "react-cookie"
 

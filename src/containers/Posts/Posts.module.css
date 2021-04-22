@@ -1,0 +1,23 @@
+.filterView {
+    color: white;
+    background-color: var(--custom_black);
+}
+
+.filterViewContainer {
+    width: 90%;
+    padding: 20px;
+}
+
+.filterViewResetButton {
+    width: 100%;
+    cursor: pointer;
+}
+
+.phoneView {
+    width: 90%;
+}
+
+.container {
+    width: 100%;
+    margin-top: 25px;
+}

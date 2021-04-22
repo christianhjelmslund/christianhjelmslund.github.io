@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect, HashRouter} from "react-router-dom";
 
-import './custom.scss'
+import './theme.scss'
 import Layout from "./components/Layout/Layout";
 import Posts from "./containers/Posts/Posts"
 import PostPage from "./containers/Posts/Post/PostPage"
