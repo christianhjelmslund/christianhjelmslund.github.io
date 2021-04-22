@@ -1,0 +1,16 @@
+.background {
+    position: fixed;
+    margin-top: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    background-image: url("../../assets/images/animated_background.svg");
+}
+
+.alternativeBackground {
+    composes: background;
+    background-image: url("../../assets/images/background.svg");
+}

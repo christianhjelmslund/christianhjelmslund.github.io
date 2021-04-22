@@ -1,4 +1,4 @@
-.NavigationItem {
+.navigationItem {
     margin-right: 15px;
     display: flex;
     height: 100%;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.NavigationItem a { /* when it isn't active */
+.navigationItem a { /* when it isn't active */
     color: white;
     text-decoration: none;
     width: 100%;
@@ -25,10 +25,10 @@
     transition-property: transform;
 }
 
-.NavigationItem a:hover {
+.navigationItem a:hover {
     color: navajowhite;
     transform: scale(1.1);
 }
-.NavigationItem a.active{
+.navigationItem a.active{
     color: navajowhite;
 }

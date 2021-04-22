@@ -1,4 +1,4 @@
-.ExternalNavigation {
+.externalNavigation {
     cursor: pointer;
     width: 64px;
     height: 64px;
@@ -14,6 +14,6 @@
 }
 
 
-.ExternalNavigation:hover {
+.externalNavigation:hover {
     transform: scale(1.1);
 }

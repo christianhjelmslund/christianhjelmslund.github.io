@@ -2,7 +2,7 @@ import React from "react";
 
 import { Card } from 'react-bootstrap'
 import StyledButton from "./UI/StyledButton";
-import styles from "../styles/Post.module.css"
+import styles from "../styles/components/Post.module.css"
 import { Route } from 'react-router-dom'
 
 const Post = (props) => {

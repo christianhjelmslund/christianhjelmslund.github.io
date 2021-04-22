@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/PostPage.module.css";
+import styles from "../../styles/pages/PostPage.module.css";
 import Emoji from "../Emoji";
 import { NavLink } from 'react-router-dom'
 

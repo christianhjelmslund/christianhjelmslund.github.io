@@ -1,10 +1,11 @@
-import Button from "react-bootstrap/Button";
 import React from "react";
+import Button from "react-bootstrap/Button";
+import styles from "../../styles/components/UI/StyledButton.module.css"
 
 const StyledButton = (props) => (
     <Button disabled={props.disabled}
             variant={props.variant}
-            style={{border: "2px solid white", margin: "5px", pointerEvents: props.pointerEvents}}
+            className={[props.noPointerEvents ? styles.noPointerEvent : null, styles.styledButton].join(' ')}
             onClick={props.clicked}>
         {props.buttonTitle}
     </Button>

@@ -7,7 +7,7 @@ import withErrorHandler from "../../hoc/withErrorHandler"
 import useHttpErrorHandler from "../../hooks/httpErrorHandling"
 import windowResize from "../../hooks/windowResize"
 
-import styles from '../../styles/Posts.module.css'
+import styles from '../../styles/pages/Posts.module.css'
 import Post from "../../components/Post"
 import Spinner from "../../components/UI/Spinner";
 import StyledButton from "../../components/UI/StyledButton";
