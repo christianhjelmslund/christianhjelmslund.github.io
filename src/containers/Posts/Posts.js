@@ -1,32 +1,17 @@
 import React, {Fragment, useEffect, useState} from "react";
-import {connect} from "react-redux";
-import {Row, Col, Container, Card, Button} from "react-bootstrap"
+
 import * as actions from "../../redux/actions/actions"
-import useHttpErrorHandler from "../../hooks/httpErrorHandling"
+import {connect} from "react-redux";
+
 import withErrorHandler from "../../hoc/withErrorHandler"
+import useHttpErrorHandler from "../../hooks/httpErrorHandling"
 import windowResize from "../../hooks/windowResize"
 
+import styles from './Posts.module.css'
 import Post from "../../components/Post/Post"
 import Spinner from "../../components/UI/Spinner/Spinner";
-import styles from './Posts.module.css'
-import styled from 'styled-components'
 import StyledButton from "../../components/UI/StyledComponents/StyledButton";
-
-const StyledInput = styled.input`
-      font: inherit;
-      margin: 10px auto;
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      background: var(--custom_black);
-      color: white;
-      text-align: left;
-      padding-left: 15px;
-      &:focus {
-        outline: none;
-        //border-bottom-color:var(--custom_black);
-      }
-`
+import {Row, Col, Container, Card, Button} from "react-bootstrap"
 
 export const Posts = props => {
 
@@ -83,12 +68,12 @@ export const Posts = props => {
         <Card className={styles.filterView}>
             <Container className={styles.filterViewContainer}>
                 <Row>
-                    <StyledInput
+                    <input className='input'
                         placeholder={"Search..."}
                         onChange={event =>
                             filterPostByTitle(event.target.value, posts)
                         }>
-                    </StyledInput>
+                    </input>
                 </Row>
                 <Row>
                     <p> At the moment you can filter the posts by searching for the title or choosing a category below </p>

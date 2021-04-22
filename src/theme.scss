@@ -31,3 +31,18 @@ a, a:hover {
   padding: 100px;
   text-align: center;
 }
+
+.input {
+  font: inherit;
+  margin: 10px auto;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: var(--custom_black);
+  color: white;
+  text-align: left;
+  padding-left: 15px;
+  &:focus {
+    outline: none;
+  }
+}
