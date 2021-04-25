@@ -18,6 +18,12 @@
 }
 
 .container {
-    width: 100%;
+    max-width: 1500px;
     margin-top: 25px;
+}
+
+@media screen and (min-width: 1500px) {
+    .container {
+        max-width: 2000px;
+    }
 }

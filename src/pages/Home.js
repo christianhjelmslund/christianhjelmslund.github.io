@@ -132,7 +132,7 @@ export const Home = props => {
     }
     return (
         <React.Fragment>
-            <Container className={styles.container} fluid={true}>
+            <Container className={styles.container}>
                 <Row>
                     {postView}
                 </Row>
