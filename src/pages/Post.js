@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 
 import withErrorHandler from "../components/hoc/withErrorHandler";
 import useHttpErrorHandler from "../hooks/httpErrorHandling";
-import styles from "../styles/pages/PostPage.module.css"
+import styles from "../styles/pages/Home.module.css"
 import Spinner from "../components/UI/Spinner";
 import StyledButton from "../components/UI/StyledButton";
 import useDecodePost from "../hooks/decodePost";

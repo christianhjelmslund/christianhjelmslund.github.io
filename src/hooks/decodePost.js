@@ -1,7 +1,7 @@
 import React from "react";
 import {Image} from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
-import styles from "../styles/pages/PostPage.module.css";
+import styles from "../styles/pages/Home.module.css";
 
 export default post => {
     if (!post) { return post }
