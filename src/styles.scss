@@ -1,27 +1,12 @@
 // Override default variables before the import
 $theme-colors: (
         "custom_black": #0b0c10,
-        "custom_dark": #1f2833,
+        "dark": #121124,
         "custom_gray": #c5c6c7,
-        "custom_cyan": #66fcf1,
-        "custom_dark_cyan": #45a29e,
-        "custom_dark_blue": #26367c,
-        "custom_bright_purple": #c42bfc,
-        "custom_purple": #a132fc,
-
-        // colorful and balanced
-        "two": #e27d60,
-        "one": #85dcb0,
-        "three": #e8a87c,
-        "four": #c38d9e,
-        "five": #41b3a3,
-
-        // elegant yet approachable
-        "one_1": #edc7b7,
-        "two_2": #eee2dc,
-        "three_3": #bab2b5,
-        "four_4": #123C69,
-        "five_5": #ac3b61
+        "1": #BCB5FC,
+        "2": #9C34FC,
+        "3": #3661FC,
+        "4": #79C4FC
 );
 
 // Import Bootstrap and its default variables

@@ -1,6 +1,17 @@
 .styledButton {
-    border: 2px solid white;
     margin: 5px;
+    border: 1px solid #9C34FC;
+    background-color: transparent;
+}
+
+.styledButtonText {
+    background: linear-gradient(45deg, #BCB5FC, #9C34FC, #3661FC, #79C4FC) border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.styledButtonActive {
+    background-color: var(--dark);
 }
 
 .noPointerEvent{

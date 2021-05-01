@@ -26,9 +26,20 @@
 }
 
 .navigationItem a:hover {
-    color: navajowhite;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #BCB5FC, #9C34FC, #3661FC, #79C4FC) no-repeat center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     transform: scale(1.1);
+
 }
 .navigationItem a.active{
-    color: navajowhite;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #BCB5FC, #9C34FC, #3661FC, #79C4FC) no-repeat center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*color: white;*/
+    /*color: linear-gradient(to right, #BCB5FC, #9C34FC, #3661FC, #79C4FC) no-repeat center;*/
+    /*background-color: #45a29e;*/
+    /*border-radius: 25px;*/
 }

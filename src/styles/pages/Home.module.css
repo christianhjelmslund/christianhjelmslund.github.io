@@ -1,11 +1,10 @@
 
 .article {
-  background-color: rgba(11, 12, 16);
+  /*background-color: rgba(11, 12, 16);*/
   padding: 3%;
   margin-left: auto;
   margin-right: auto;
-  color: white;
-
+  color: rgba(11, 12, 16);
 }
 
 .title {
@@ -16,7 +15,7 @@
 
 .date {
   font-size: small;
-  color: lightgray;
+  color: midnightblue;
 }
 
 .divImg {
@@ -57,14 +56,16 @@
 
 .teaser {
   font-size: x-large;
-  background-color: var(--custom_dark);
+  border-color: #45a29e;
+  box-shadow: 2px 5px 9px #888888;
   padding: 3%;
   border-radius: 20px;
 }
 
 .filterView {
-  color: white;
-  background-color: var(--custom_black);
+  border-radius: 2%;
+  color: black;
+  box-shadow: 2px 5px 9px #888888;
 }
 
 .filterViewContainer {
@@ -86,12 +87,8 @@
   margin-top: 25px;
 }
 
-@media screen and (min-width: 1500px) {
-  .container {
-    max-width: 2000px;
-  }
-}
 
+/* PHONES */
 @media screen and (max-width: 1024px) {
   .article {
     text-align: left;
@@ -123,13 +120,7 @@
   }
 }
 
-@media screen and (min-width: 1800px) {
-  .article {
-    max-width: 1500px;
-    min-width: 1000px;
-  }
-}
-
+/* laptops usually */
 @media screen and (min-width: 1025px) and (max-width: 1800px) {
   .content {
     font-size: large;
@@ -144,8 +135,27 @@
   }
 
   .article {
-    max-width: 1250px;
-    min-width: 1025px;
+    max-width: 1025px;
+    min-width: 700px;
+  }
+}
+
+/* high res screen, usually external screen */
+@media screen and (min-width: 1500px) {
+  .container {
+    max-width: 2000px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+
+  .container {
+    max-width: 2000px;
+  }
+
+  .article {
+    max-width: 1500px;
+    min-width: 1000px;
   }
 }
 
