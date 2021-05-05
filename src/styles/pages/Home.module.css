@@ -1,6 +1,5 @@
 
 .article {
-  /*background-color: rgba(11, 12, 16);*/
   padding: 3%;
   margin-left: auto;
   margin-right: auto;
@@ -15,12 +14,13 @@
 
 .date {
   font-size: small;
-  color: midnightblue;
+  color: var(--backgroundColor);
 }
 
 .divImg {
   width: 100%;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .img {
@@ -31,6 +31,8 @@
   font-size: xx-large;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .categories {
@@ -45,19 +47,17 @@
   text-align: right;
   margin-top: 16px;
   width: 100%;
-  color: white;
+  color: var(--backgroundColor);
   font-style: italic;
 }
 
 .content {
   font-size: x-large;
-  margin-top: 30px;
 }
 
 .teaser {
   font-size: x-large;
-  border-color: #45a29e;
-  box-shadow: 2px 5px 9px #888888;
+  box-shadow: 1px 3px 5px #BCB5FC;
   padding: 3%;
   border-radius: 20px;
 }
@@ -65,7 +65,7 @@
 .filterView {
   border-radius: 2%;
   color: black;
-  box-shadow: 2px 5px 9px #888888;
+  box-shadow: 1px 3px 5px #BCB5FC;
 }
 
 .filterViewContainer {

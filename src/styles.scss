@@ -1,25 +1,26 @@
 // Override default variables before the import
 $theme-colors: (
-        "custom_black": #0b0c10,
-        "dark": #121124,
-        "custom_gray": #c5c6c7,
         "1": #BCB5FC,
         "2": #9C34FC,
         "3": #3661FC,
-        "4": #79C4FC
+        "4": #79C4FC,
+        "backgroundColor": #111129
 );
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@150&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: large;
+  font-size: medium;
 }
 
 a, a:hover {
-  color: navajowhite;
+  background: linear-gradient(45deg, #BCB5FC, #9C34FC, #3661FC, #79C4FC) no-repeat center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
 }
 

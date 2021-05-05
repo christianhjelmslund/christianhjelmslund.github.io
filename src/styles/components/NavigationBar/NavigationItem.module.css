@@ -4,10 +4,13 @@
     height: 100%;
     width: auto;
     align-items: center;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .navigationItem a { /* when it isn't active */
-    color: white;
+    background: linear-gradient(45deg, #BCB5FC, #9C34FC, #3661FC, #79C4FC) no-repeat center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration: none;
     width: 100%;
     box-sizing: border-box;
@@ -26,7 +29,6 @@
 }
 
 .navigationItem a:hover {
-    border-radius: 25px;
     background: linear-gradient(45deg, #BCB5FC, #9C34FC, #3661FC, #79C4FC) no-repeat center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -34,12 +36,7 @@
 
 }
 .navigationItem a.active{
-    border-radius: 25px;
-    background: linear-gradient(45deg, #BCB5FC, #9C34FC, #3661FC, #79C4FC) no-repeat center;
+    background: linear-gradient(45deg, #79C4FC, #3661FC, #9C34FC, #BCB5FC) no-repeat center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /*color: white;*/
-    /*color: linear-gradient(to right, #BCB5FC, #9C34FC, #3661FC, #79C4FC) no-repeat center;*/
-    /*background-color: #45a29e;*/
-    /*border-radius: 25px;*/
 }

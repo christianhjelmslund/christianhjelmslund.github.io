@@ -1,9 +1,12 @@
 import React, {useState} from "react"
 
-import GithubIcon from "../../../assets/images/github.svg"
-import LinkedInIcon from "../../../assets/images/linkedin.svg"
-import InstagramIcon from "../../../assets/images/instagram.svg"
+import {
+    github as githubIcon,
+    instagram as instagramIcon,
+    linkedIn as linkedInIcon,
+    rocket as rocketIcon
 
+} from "../../Icons"
 import {Navbar, Nav, Row } from "react-bootstrap"
 
 import ExternalNavigation from "./ExternalNavigation";
@@ -17,9 +20,7 @@ const NavigationBar = () => {
 
     const navBarBody =
         (<React.Fragment>
-            <Navbar.Brand>
-                <NavigationItem clicked={() => handleNavCollapse(true)} exact link="/">Home</NavigationItem>
-            </Navbar.Brand>
+            <NavigationItem clicked={() => handleNavCollapse(true)} exact link="/">Christian Hjelmslund {rocketIcon}</NavigationItem>
             <Navbar.Toggle onClick={() => handleNavCollapse(!isNavCollapsed)} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto" />
@@ -27,12 +28,9 @@ const NavigationBar = () => {
                     <NavigationItem clicked={() => handleNavCollapse(true)} link="/investing">Investing</NavigationItem>
                     <NavigationItem clicked={() => handleNavCollapse(true)} link="/about">About</NavigationItem>
                     <Row>
-                        <ExternalNavigation src={GithubIcon} alt={"Github"}
-                                            link={"https://github.com/christianhjelmslund"}/>
-                        <ExternalNavigation src={LinkedInIcon} alt={"LinkedIn"}
-                                            link={"https://www.linkedin.com/in/christian-hjelmslund/"}/>
-                        <ExternalNavigation src={InstagramIcon} alt={"Facebook"}
-                                            link={"https://www.instagram.com/christianhjelmslund/"}/>
+                        <ExternalNavigation link={"https://github.com/christianhjelmslund"}>{githubIcon}</ExternalNavigation>
+                        <ExternalNavigation link={"https://www.linkedin.com/in/christian-hjelmslund/"}>{linkedInIcon}</ExternalNavigation>
+                        <ExternalNavigation link={"https://www.instagram.com/christianhjelmslund/"}>{instagramIcon}</ExternalNavigation>
                     </Row>
                 </Nav>
             </Navbar.Collapse>
