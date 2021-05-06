@@ -1,12 +1,13 @@
 .post {
   margin-bottom: 20px;
-  background-color: var(--custom_black);
   border-radius: 2%;
-  color: white;
+  color: black;
+
+  box-shadow: 1px 3px 5px #BCB5FC;
+  padding: 6%;
 
   vertical-align: middle;
   transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   transition-duration: 0.3s;
@@ -23,7 +24,7 @@
 
 .date {
   font-size: small;
-  color: lightgray;
+  color: var(--backgroundColor);
 }
 
 .alignImg {
@@ -37,5 +38,5 @@
 }
 
 .footer {
-  margin-top: -20px;
+  margin-top: 20px;
 }

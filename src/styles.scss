@@ -1,49 +1,61 @@
 // Override default variables before the import
 $theme-colors: (
-        "custom_black": #0b0c10,
-        "custom_dark": #1f2833,
-        "custom_gray": #c5c6c7,
-        "custom_cyan": #66fcf1,
-        "custom_dark_cyan": #45a29e,
-        "custom_dark_blue": #26367c,
-        "custom_bright_purple": #c42bfc,
-        "custom_purple": #a132fc
+        "one": #BCB5FC,
+        "two": #9C34FC,
+        "three": #3661FC,
+        "four": #79C4FC,
+        "backgroundColor": #111129
 );
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@150&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: large;
+  font-size: medium;
 }
 
 a, a:hover {
-  color: navajowhite;
+  background: linear-gradient(45deg, #BCB5FC, #9C34FC, #3661FC, #79C4FC) no-repeat center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
 }
 
 .under-construction {
-  color: white;
+  color: black;
   font-size: xxx-large;
   padding: 100px;
   text-align: center;
 }
 
 .input {
-  font: inherit;
+  font-size: medium;
+  font-weight: 100;
   margin: 10px auto;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  background: var(--custom_black);
-  color: white;
+  border: 1px solid #9C34FC;
+  border-radius: 5px;
+  color: #9C34FC;
   text-align: left;
   padding-left: 15px;
   &:focus {
     outline: none;
+  };
+  &::placeholder {
+    color: #9C34FC;
   }
+}
+
+.half-width {
+  width: 50%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
 
 .pointer {

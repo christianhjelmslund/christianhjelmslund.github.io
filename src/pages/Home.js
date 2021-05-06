@@ -7,32 +7,39 @@ import withErrorHandler from "../components/hoc/withErrorHandler"
 import useHttpErrorHandler from "../hooks/httpErrorHandling"
 import windowResize from "../hooks/windowResize"
 
-import styles from '../styles/pages/Posts.module.css'
+import styles from '../styles/pages/Home.module.css'
 import Post from "../components/Post"
 import Spinner from "../components/UI/Spinner";
 import StyledButton from "../components/UI/StyledButton";
-import {Row, Col, Container, Card, Button} from "react-bootstrap"
+import WelcomeMessage from "../components/UI/WelcomeMessage";
+
+import {Row, Col, Container, Button} from "react-bootstrap"
 
 export const Home = props => {
-
     const {onFetchPosts} = props
-    const [filteredPosts, setFilteredPosts] = useState('')
+    const [filteredPosts, setFilteredPosts] = useState([])
+    const [activeCategories, setActiveCategories] = useState(new Set([]))
     const resize = windowResize();
- 
+
     const filterPostByTitle = (title, posts) => {
         if (title === "") {
-            setFilteredPosts(null)
+            setFilteredPosts([])
         } else {
             setFilteredPosts(
                 posts.filter(post => post.props.title ?
                     post.props.title.toUpperCase().trim().includes(title.toUpperCase().trim()) :
-                    null)
+                    [])
             )
         }
     }
 
     const filterPostsByCategory = (category, posts) => {
-        setFilteredPosts(posts.filter(post => post.props.category.includes(category)))
+        let activeCategoriesCopy = new Set([...activeCategories])
+        activeCategoriesCopy.has(category) ? activeCategoriesCopy.delete(category) :  activeCategoriesCopy.add(category)
+        const filteredPostsCopy = [...posts.filter(post => post.props.category.includes(category) && !activeCategories.has(category))]
+
+        setActiveCategories(activeCategoriesCopy)
+        setFilteredPosts(filteredPostsCopy)
     }
     useEffect(() => {
         onFetchPosts()
@@ -61,11 +68,12 @@ export const Home = props => {
                 teaser={post.teaser}
                 thumbnail={post.thumbnail}
                 buttons={post.buttons}
+                activeCategories={activeCategories}
                 filter={(category) => filterPostsByCategory(category, posts)}/>
         }).reverse()
     }
     const filterView =
-        <Card className={styles.filterView}>
+        <div className={styles.filterView}>
             <Container className={styles.filterViewContainer}>
                 <Row>
                     <input className='input'
@@ -80,24 +88,27 @@ export const Home = props => {
                 </Row>
                 <Row>
                     {  categories.size === 0 ? null :
-                    [...categories].map(category => {
-                        return (<StyledButton id={category}
-                                              key={category}
-                                              variant="custom_dark"
-                                              buttonTitle={category}
-                                              clicked={() => filterPostsByCategory(category, posts)}/>)
-                    })
+                        [...categories].map(category => {
+                            return (<StyledButton id={category}
+                                                  key={category}
+                                                  buttonTitle={category}
+                                                  active={activeCategories.has(category)}
+                                                  clicked={() => filterPostsByCategory(category, posts)}/>)
+                        })
                     }
                 </Row>
                 <Row className={"mt-3"}>
                     <Button className={styles.filterViewResetButton}
                             variant="danger"
-                            onClick={() => { setFilteredPosts(null)}}>
+                            onClick={() => {
+                                setFilteredPosts([])
+                                setActiveCategories(new Set([]))
+                            }}>
                         Reset
                     </Button>
                 </Row>
             </Container>
-        </Card>
+        </div>
     let postView
     if (resize.width >= 1025) { // create a constants file
         if (props.loading) {
@@ -109,15 +120,15 @@ export const Home = props => {
             postView = <Fragment>
                 <Col/>
                 <Col xs={"2"}>{filterView} </Col>
-                <Col xs={"5"}>{filteredPosts ? filteredPosts : posts}</Col>
+                <Col xs={"5"}>{filteredPosts.length > 0 ? filteredPosts : posts}</Col>
                 <Col/>
             </Fragment>
         } else if (posts.length > 0) {
             postView = <Fragment>
                 <Col xs={"2"}>{filterView}</Col>
-                <Col>{filteredPosts ? filteredPosts.slice(filteredPosts.length / 2) : posts.slice(posts.length / 2)}</Col>
-                <Col>{filteredPosts ? filteredPosts.slice(0, filteredPosts.length / 2) : posts.slice(0, posts.length / 2)}</Col>
-                <Col xs={"2"}/>
+                <Col>{filteredPosts.length > 0 ? filteredPosts.slice(filteredPosts.length / 2) : posts.slice(posts.length / 2)}</Col>
+                <Col>{filteredPosts.length > 0 ? filteredPosts.slice(0, filteredPosts.length / 2) : posts.slice(0, posts.length / 2)}</Col>
+                <Col xs={"2"}><WelcomeMessage/></Col>
             </Fragment>
         }
     }
@@ -126,7 +137,10 @@ export const Home = props => {
             postView = <Spinner/>
         } else {
             postView = <Fragment>
-               <Col className={styles.phoneView}>{posts}</Col>
+               <Col className={styles.phoneView}>
+                   {<WelcomeMessage/>}
+                   {posts}
+               </Col>
             </Fragment>
         }
     }
