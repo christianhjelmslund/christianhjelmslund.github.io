@@ -1,9 +1,9 @@
 // Override default variables before the import
 $theme-colors: (
-        "1": #BCB5FC,
-        "2": #9C34FC,
-        "3": #3661FC,
-        "4": #79C4FC,
+        "one": #BCB5FC,
+        "two": #9C34FC,
+        "three": #3661FC,
+        "four": #79C4FC,
         "backgroundColor": #111129
 );
 
@@ -25,25 +25,37 @@ a, a:hover {
 }
 
 .under-construction {
-  color: white;
+  color: black;
   font-size: xxx-large;
   padding: 100px;
   text-align: center;
 }
 
 .input {
-  font: inherit;
+  font-size: medium;
+  font-weight: 100;
   margin: 10px auto;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  background: var(--custom_black);
-  color: white;
+  border: 1px solid #9C34FC;
+  border-radius: 5px;
+  color: #9C34FC;
   text-align: left;
   padding-left: 15px;
   &:focus {
     outline: none;
+  };
+  &::placeholder {
+    color: #9C34FC;
   }
+}
+
+.half-width {
+  width: 50%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
 
 .pointer {

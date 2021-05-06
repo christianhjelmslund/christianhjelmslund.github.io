@@ -21,7 +21,7 @@ const About = () => {
                 If I were to designate a target audience, I'd say it is people who are interested in tech or at least curious about it. If you are the type of person that has wondered what a cookie actually is, but never actually taken action to find out, you might enjoy it. Some of the topics will also be aimed at people who already know how to code, build software, and in general have a high knowledge within the domain. However, as a future engineer, it is crucial(!) to be able to explain the stuff you do to non-technical people. I hope that I can learn that here.
             </p>
             <p className={styles.content}>
-                Alright, so I think you get the gist. I'd say a good starting point is to read the post on why I build this site the way I did. {<NavLink to={'posts/post1'}>Enjoy️</NavLink>}
+                Alright, so I think you get the gist. I'd say a good starting point is to read the post on why I build this site the way I did. {<NavLink to={'post1'}>Enjoy️</NavLink>}
             </p>
         </article>
     )

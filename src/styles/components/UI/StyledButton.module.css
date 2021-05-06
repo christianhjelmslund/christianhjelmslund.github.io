@@ -11,6 +11,10 @@
     -webkit-text-fill-color: transparent;
 }
 
+.styledButton:hover {
+    background-color: var(--backgroundColor);
+}
+
 .styledButtonActive {
     background-color: var(--backgroundColor);
 }
