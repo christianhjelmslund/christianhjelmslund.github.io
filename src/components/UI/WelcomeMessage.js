@@ -6,8 +6,6 @@ import {useCookies} from "react-cookie";
 const WelcomeMessage = () => {
     const [cookies] = useCookies(['name']);
     const cookie = cookies['welcome_message']
-    console.log(cookies)
-    console.log(cookies)
     if (cookie) {
         return <div className={styles.filterView}>
             <Container className={styles.filterViewContainer}>

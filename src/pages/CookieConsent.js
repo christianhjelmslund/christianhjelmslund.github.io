@@ -15,7 +15,6 @@ const CookieConsent = () => {
         if (consentState) {
             removeCookie('consent')
             removeCookie('welcome_message')
-            console.log(cookies)
             setConsentState(false)
         } else {
             setConsentState(true)
@@ -28,7 +27,6 @@ const CookieConsent = () => {
     const setWelcomeMessage = () => {
         const tomorrow = new Date();
         tomorrow.setDate(new Date().getDate()+1);
-        console.log(tomorrow)
         setCookie("welcome_message", welcomeMessageInput, { expires: tomorrow })
         setWelcomeMessageInput('')
         setDidSubmitWelcomeMessage(true)

@@ -36,7 +36,27 @@ export const Home = props => {
     const filterPostsByCategory = (category, posts) => {
         let activeCategoriesCopy = new Set([...activeCategories])
         activeCategoriesCopy.has(category) ? activeCategoriesCopy.delete(category) :  activeCategoriesCopy.add(category)
-        const filteredPostsCopy = [...posts.filter(post => post.props.category.includes(category) && !activeCategories.has(category))]
+        console.log(activeCategoriesCopy)
+        let filteredPostsCopy = posts.filter(post =>
+            post.props.category.some(category => activeCategoriesCopy.has(category))
+            // console.log(post.category)
+            // console.log(activeCategoriesCopy)
+            // let test = activeCategoriesCopy.values().filter(
+            //
+            // )
+            // return [...activeCategoriesCopy].filter(category => postCategories.has(category))
+        )
+        // console.log(filteredPostsCopy)
+        // let filteredPostsCopy = [...posts.filter(
+        //     post => post.props.category.includes(category)
+        //         && !activeCategoriesCopy.has(category))]
+        //
+        // filteredPostsCopy = filteredPostsCopy.concat(filteredPosts)
+
+        // console.log(activeCategoriesCopy)
+        filteredPostsCopy.forEach(post => {
+            console.log(post)
+        })
 
         setActiveCategories(activeCategoriesCopy)
         setFilteredPosts(filteredPostsCopy)
