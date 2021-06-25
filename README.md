@@ -50,7 +50,9 @@ I will probably migrate from Firebase and create my own server when I want more 
 ### Prerequisites
 * npm
 
-``` npm install npm@latest -g ```
+``` 
+npm install npm@latest -g 
+```
 ### Installation
 ```
 git clone git@github.com:christianhjelmslund/christianhjelmslund.dev.git
