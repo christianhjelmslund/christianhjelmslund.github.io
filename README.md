@@ -81,5 +81,5 @@ https://github.com/othneildrew/Best-README-Template for inspiring me to make thi
 [node-shield]: https://img.shields.io/node/v/package.json
 [issues-shield]: https://img.shields.io/github/issues/christianhjelmslund/christianhjelmslund.dev
 [issues-url]:  https://github.com/christianhjelmslund/christianhjelmslund.dev/graphs/contributors
-[license-shield]: https://img.shields.io/github/license/christianhjelmslund/christianhjelmslund.dev
-[license-url]: https://github.com/christianhjelmslund/christianhjelmslund.dev//blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/christianhjelmslund/christianhjelmslund.dev?logo=mit
+[license-url]: https://github.com/christianhjelmslund/christianhjelmslund.dev//blob/master/LICENSE.md
