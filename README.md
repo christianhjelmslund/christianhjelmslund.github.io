@@ -15,16 +15,16 @@
   </h3>
 
   <p align="center">
-    This is and will probavbly always be a work in progress
+    Welcome to my personal site's Github project ☺️
+    <!-- <br />
+    <a href="https://github.com/christianhjelmslund/christianhjelmslund.dev"><strong>Explore the docs »</strong></a> -->
     <br />
-    <a href="https://github.com/christianhjelmslund/christianhjelmslund.dev"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/christianhjelmslund/christianhjelmslund.dev">View Demo</a>
+    <!-- TODO: <a href="https://github.com/christianhjelmslund/christianhjelmslund.dev">View Demo</a>
+    · -->
+    <a href="https://github.com/christianhjelmslund/christianhjelmslund.dev/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/christianhjelmslund/christianhjelmslund.dev">Report Bug</a>
-    ·
-    <a href="https://github.com/christianhjelmslund/christianhjelmslund.dev">Request Feature</a>
+    <a href="https://github.com/christianhjelmslund/christianhjelmslund.dev/issues/new">Request Feature</a>
   </p>
 </p>
 
