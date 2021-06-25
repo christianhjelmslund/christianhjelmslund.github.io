@@ -80,6 +80,6 @@ https://github.com/othneildrew/Best-README-Template for inspiring me to make thi
 [stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers-->
 [node-shield]: https://img.shields.io/node/v/package.json
 [issues-shield]: https://img.shields.io/github/issues/christianhjelmslund/christianhjelmslund.dev
-[issues-url]:  https://github.com/christianhjelmslund/christianhjelmslund.dev/graphs/contributors
+[issues-url]:  https://github.com/christianhjelmslund/christianhjelmslund.dev/issues
 [license-shield]: https://img.shields.io/github/license/christianhjelmslund/christianhjelmslund.dev?logo=mit
-[license-url]: https://github.com/christianhjelmslund/christianhjelmslund.dev//blob/master/LICENSE.md
+[license-url]: https://github.com/christianhjelmslund/christianhjelmslund.dev//blob/master/LICENSE
