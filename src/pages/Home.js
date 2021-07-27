@@ -18,7 +18,7 @@ import {Row, Col, Container, Button} from "react-bootstrap"
 export const Home = props => {
     const {onFetchPosts} = props
     const [filteredPosts, setFilteredPosts] = useState([])
-    const [activeCategories, setActiveCategories] = useState(new Set([]))
+    const [activeCategories, setActiveCategories] = useState([])
     const resize = windowResize();
 
     const filterPostByTitle = (title, posts) => {
@@ -34,33 +34,21 @@ export const Home = props => {
     }
 
     const filterPostsByCategory = (category, posts) => {
-        let activeCategoriesCopy = new Set([...activeCategories])
-        activeCategoriesCopy.has(category) ? activeCategoriesCopy.delete(category) :  activeCategoriesCopy.add(category)
-        console.log(activeCategoriesCopy)
+        let activeCategoriesCopy = [...activeCategories]
+
+        if (activeCategories.includes(category)) {
+            activeCategoriesCopy = activeCategoriesCopy.filter(cat => cat !== category)
+        } else {
+            activeCategoriesCopy.push(category)
+        }
+
         let filteredPostsCopy = posts.filter(post =>
-            post.props.category.some(category => activeCategoriesCopy.has(category))
-            // console.log(post.category)
-            // console.log(activeCategoriesCopy)
-            // let test = activeCategoriesCopy.values().filter(
-            //
-            // )
-            // return [...activeCategoriesCopy].filter(category => postCategories.has(category))
+            post.props.category.some(category => activeCategoriesCopy.includes(category))
         )
-        // console.log(filteredPostsCopy)
-        // let filteredPostsCopy = [...posts.filter(
-        //     post => post.props.category.includes(category)
-        //         && !activeCategoriesCopy.has(category))]
-        //
-        // filteredPostsCopy = filteredPostsCopy.concat(filteredPosts)
-
-        // console.log(activeCategoriesCopy)
-        filteredPostsCopy.forEach(post => {
-            console.log(post)
-        })
-
         setActiveCategories(activeCategoriesCopy)
         setFilteredPosts(filteredPostsCopy)
     }
+
     useEffect(() => {
         onFetchPosts()
     }, [onFetchPosts])
@@ -89,7 +77,7 @@ export const Home = props => {
                 thumbnail={post.thumbnail}
                 buttons={post.buttons}
                 activeCategories={activeCategories}
-                filter={(category) => filterPostsByCategory(category, posts)}/>
+                />
         }).reverse()
     }
     const filterView =
@@ -112,7 +100,7 @@ export const Home = props => {
                             return (<StyledButton id={category}
                                                   key={category}
                                                   buttonTitle={category}
-                                                  active={activeCategories.has(category)}
+                                                  active={activeCategories.includes(category)}
                                                   clicked={() => filterPostsByCategory(category, posts)}/>)
                         })
                     }
@@ -122,7 +110,7 @@ export const Home = props => {
                             variant="danger"
                             onClick={() => {
                                 setFilteredPosts([])
-                                setActiveCategories(new Set([]))
+                                setActiveCategories([])
                             }}>
                         Reset
                     </Button>

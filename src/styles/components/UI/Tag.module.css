@@ -1,0 +1,16 @@
+.tag {
+    /*margin-bottom: 10px;*/
+    border: 3px solid var(--one);
+    border-radius: 3rem;
+    background-color: var(--backgroundColor);
+    font-size: small;
+    padding: 2%;
+    margin: 1%;
+    display: inline-block
+}
+
+.tagText {
+    background: linear-gradient(45deg, #BCB5FC, #9C34FC, #3661FC, #79C4FC) border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

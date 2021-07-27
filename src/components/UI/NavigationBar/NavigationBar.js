@@ -25,7 +25,6 @@ const NavigationBar = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto" />
                 <Nav>
-                    <NavigationItem clicked={() => handleNavCollapse(true)} link="/investing">Investing</NavigationItem>
                     <NavigationItem clicked={() => handleNavCollapse(true)} link="/about">About</NavigationItem>
                     <Row>
                         <ExternalNavigation link={"https://github.com/christianhjelmslund"}>{githubIcon}</ExternalNavigation>

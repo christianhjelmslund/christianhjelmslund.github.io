@@ -1,12 +1,11 @@
 import React from "react";
 
 import { Card } from 'react-bootstrap'
-import StyledButton from "./UI/StyledButton";
 import styles from "../styles/components/Post.module.css"
 import { Route } from 'react-router-dom'
+import Tag from "./UI/Tag";
 
 const Post = (props) => {
-    let buttonDisabled = false
     let toPostPage = (history) => {
         history.push({
             pathname: "/"+props.id,
@@ -40,10 +39,7 @@ const Post = (props) => {
                 </div>
                 <div className={styles.footer}>
                     {props.category ? props.category.map(category => {
-                        return (<StyledButton disabled = {buttonDisabled}
-                                              key={category}
-                                              buttonTitle={category}
-                                              clicked={() => props.filter(category)}
+                        return (<Tag tagTitle={category}
                         />)
                     }):null}
                 </div>

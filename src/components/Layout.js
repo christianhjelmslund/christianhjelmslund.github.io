@@ -1,14 +1,16 @@
 import React from "react";
 import NavigationBar from "./UI/NavigationBar/NavigationBar";
+import Footer from "./UI/Footer/Footer";
 import styles from "../styles/components/Layout.module.css"
 
 const Layout = props => {
     return (
-        <React.Fragment >
+        <body className={styles.body}>
             <div className={styles.background}/>
             <NavigationBar/>
-            <main>{props.children}</main>
-        </React.Fragment>
+            <main className={styles.content}>{props.children}</main>
+            <Footer/>
+        </body>
     )
 }
 

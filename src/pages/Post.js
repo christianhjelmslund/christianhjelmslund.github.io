@@ -7,8 +7,8 @@ import withErrorHandler from "../components/hoc/withErrorHandler";
 import useHttpErrorHandler from "../hooks/httpErrorHandling";
 import styles from "../styles/pages/Home.module.css"
 import Spinner from "../components/UI/Spinner";
-import StyledButton from "../components/UI/StyledButton";
 import useDecodePost from "../hooks/decodePost";
+import Tag from "../components/UI/Tag";
 
 const Post = (props) => {
     const {onFetchPost} = props
@@ -25,10 +25,7 @@ const Post = (props) => {
     if (!post.author) return <Spinner/>
 
     const categories = post.category.map((category) => {
-        return (<StyledButton key={category}
-                              variant={"custom_dark_blue"}
-                              noPointerEvents={true}
-                              buttonTitle={category}/>)
+        return (<Tag key={category} tagTitle={category}/>)
     });
     return  <article className={styles.article}>
         <p className={styles.date}>{post.date}</p>
