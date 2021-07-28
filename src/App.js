@@ -6,7 +6,8 @@ import ScrollToTop from "./hooks/scrollToTop";
 
 import Layout from "./components/Layout";
 import Posts from "./pages/Home"
-import PostPage from "./pages/Post"
+import Spinner from "./components/UI/Spinner"
+const Post = lazy(() => import('./pages/Post'));
 const Services = lazy(() => import('./pages/Services'));
 const Contact = lazy(() => import('./pages/Contact'));
 const About = lazy(() => import('./pages/About'));
@@ -17,13 +18,13 @@ const App = () => {
         <>
             <ScrollToTop />
             <Switch>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Spinner/>}>
                 <Route path={"/"} exact component={Posts}/>
                 <Route path={"/about"} component={About}/>
                 <Route path={"/contact"} component={Contact}/>
                 <Route path={"/services"} component={Services}/>
                 <Route path={"/cookie_consent"} component={CookieConsent}/>
-                <Route path={"/:postId"} component={PostPage}/>
+                <Route path={"/:postId"} component={Post}/>
                 <Redirect to={"/"}/>
                 </Suspense>
             </Switch>
