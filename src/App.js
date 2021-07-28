@@ -10,6 +10,7 @@ import PostPage from "./pages/Post"
 import About from "./pages/About"
 import CookiePage from "./pages/CookieConsent"
 import Contact from "./pages/Contact";
+import Services from "./pages/Services";
 
 const App = () => {
     let routes = (
@@ -19,6 +20,7 @@ const App = () => {
                 <Route path={"/"} exact component={Posts}/>
                 <Route path={"/about"} component={About}/>
                 <Route path={"/contact"} component={Contact}/>
+                <Route path={"/services"} component={Services}/>
                 <Route path={"/cookie_consent"} component={CookiePage}/>
                 <Route path={"/:postId"} component={PostPage}/>
                 <Redirect to={"/"}/>

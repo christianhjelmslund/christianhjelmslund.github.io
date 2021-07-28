@@ -12,6 +12,12 @@
   text-align: left;
 }
 
+.subsection {
+  width: 100%;
+  font-size: x-large;
+  text-align: left;
+}
+
 .date {
   font-size: small;
   color: var(--backgroundColor);
@@ -53,6 +59,11 @@
 
 .content {
   font-size: x-large;
+}
+
+.subsubsection {
+  composes: content;
+  font-weight: bold;
 }
 
 .teaser {

@@ -26,6 +26,7 @@ const NavigationBar = () => {
                 <Nav className="mr-auto" />
                 <Nav>
                     <NavigationItem clicked={() => handleNavCollapse(true)} link="/about">About</NavigationItem>
+                    <NavigationItem clicked={() => handleNavCollapse(true)} link="/services">Services</NavigationItem>
                     <Row>
                         <ExternalNavigation link={"https://github.com/christianhjelmslund"}>{githubIcon}</ExternalNavigation>
                         <ExternalNavigation link={"https://www.linkedin.com/in/christian-hjelmslund/"}>{linkedInIcon}</ExternalNavigation>
