@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Route, Switch, Redirect, HashRouter} from "react-router-dom";
+import { Route, Switch, HashRouter} from "react-router-dom";
 
 import './styles.scss'
 import ScrollToTop from "./hooks/scrollToTop";
@@ -19,13 +19,12 @@ const App = () => {
             <ScrollToTop />
             <Switch>
                 <Suspense fallback={<Spinner/>}>
-                <Route path={"/"} exact component={Posts}/>
-                <Route path={"/about"} component={About}/>
-                <Route path={"/contact"} component={Contact}/>
-                <Route path={"/services"} component={Services}/>
-                <Route path={"/cookie_consent"} component={CookieConsent}/>
-                <Route path={"/:postId"} component={Post}/>
-                <Redirect to={"/"}/>
+                    <Route path={"/"} exact component={Posts}/>
+                    <Route path={"/about"} component={About}/>
+                    <Route path={"/contact"} component={Contact}/>
+                    <Route path={"/services"} component={Services}/>
+                    <Route path={"/cookie_consent"} component={CookieConsent}/>
+                    <Route path={"/:postId"} component={Post}/>
                 </Suspense>
             </Switch>
         </>
