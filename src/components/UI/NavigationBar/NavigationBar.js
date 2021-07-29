@@ -7,7 +7,8 @@ import {
     rocket as rocketIcon
 
 } from "../../Icons"
-import {Navbar, Nav, Row } from "react-bootstrap"
+import {Navbar, Nav, NavbarBrand} from "react-bootstrap"
+import {NavLink} from "react-router-dom"
 
 import ExternalNavigation from "./ExternalNavigation";
 import NavigationItem from "./NavigationItem";
@@ -20,18 +21,16 @@ const NavigationBar = () => {
 
     const navBarBody =
         (<React.Fragment>
-            <NavigationItem clicked={() => handleNavCollapse(true)} exact link="/">Christian Hjelmslund {rocketIcon}</NavigationItem>
+            <NavbarBrand as={NavLink} to="/" >Christan Hjelmslund {rocketIcon}</NavbarBrand>
             <Navbar.Toggle onClick={() => handleNavCollapse(!isNavCollapsed)} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto" />
                 <Nav>
                     <NavigationItem clicked={() => handleNavCollapse(true)} link="/about">About</NavigationItem>
                     <NavigationItem clicked={() => handleNavCollapse(true)} link="/services">Services</NavigationItem>
-                    <Row>
-                        <ExternalNavigation link={"https://github.com/christianhjelmslund"}>{githubIcon}</ExternalNavigation>
-                        <ExternalNavigation link={"https://www.linkedin.com/in/christian-hjelmslund/"}>{linkedInIcon}</ExternalNavigation>
-                        <ExternalNavigation link={"https://www.instagram.com/christianhjelmslund/"}>{instagramIcon}</ExternalNavigation>
-                    </Row>
+                    <ExternalNavigation link={"https://github.com/christianhjelmslund"}>{githubIcon}</ExternalNavigation>
+                    <ExternalNavigation link={"https://www.linkedin.com/in/christian-hjelmslund/"}>{linkedInIcon}</ExternalNavigation>
+                    <ExternalNavigation link={"https://www.instagram.com/christianhjelmslund/"}>{instagramIcon}</ExternalNavigation>
                 </Nav>
             </Navbar.Collapse>
         </React.Fragment>)
