@@ -10,7 +10,7 @@ const Services = () => {
             <p className={styles.content}>
                 As can be seen from the {<NavLink to={'about'}>About</NavLink>} page, I am currently employed and doing my thesis, so when I refer to services I am not looking for a coding gig, but smaller tasks such as:
             </p>
-            <ul>
+            <ul className={styles.content}>
                 <li>
                     Resume reviews
                 </li>
@@ -31,7 +31,7 @@ const Services = () => {
             <p className={styles.content}>
                 You might think I'm being a bit overconfident listing all these services I offer since I am not accomplished yet and still studying - I understand this logic. Therefore, I'll quickly just paint a more clear picture of me and what I think I can offer. I am entering my last semester, which means I have studied Computer Science and Engineering related topics for 5 years. When I started my degree in 2016, I had never coded once before and I can say that I was one of the only ones which had not. The first semester was the most challenging one for me during these 5 years, so if you are in a position where you are about to start University or you are struggling with what is considered "basic" coding challenges and comparing yourself with your fellow peers, I have been in your shoes. Besides this, I have had various student jobs, that were relatively different which is also why I feel I have a broad skill-set and essentially why I think I have services to offer.
             </p>
-            <ul>
+            <ul className={styles.content}>
                 <li>
                     Sole iOS developer hired by my University
                 </li>

@@ -11,7 +11,6 @@ import styles from '../styles/pages/Home.module.css'
 import Post from "../components/Post"
 import Spinner from "../components/UI/Spinner";
 import StyledButton from "../components/UI/StyledButton";
-import WelcomeMessage from "../components/UI/WelcomeMessage";
 
 import {Row, Col, Container, Button} from "react-bootstrap"
 
@@ -136,7 +135,6 @@ export const Home = props => {
                 <Col xs={"2"}>{filterView}</Col>
                 <Col>{filteredPosts.length > 0 ? filteredPosts.slice(filteredPosts.length / 2) : posts.slice(posts.length / 2)}</Col>
                 <Col>{filteredPosts.length > 0 ? filteredPosts.slice(0, filteredPosts.length / 2) : posts.slice(0, posts.length / 2)}</Col>
-                <Col xs={"2"}><WelcomeMessage/></Col>
             </Fragment>
         }
     }
@@ -146,7 +144,6 @@ export const Home = props => {
         } else {
             postView = <Fragment>
                <Col className={styles.phoneView}>
-                   {<WelcomeMessage/>}
                    {posts}
                </Col>
             </Fragment>
